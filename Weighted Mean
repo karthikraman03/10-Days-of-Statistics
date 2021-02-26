@@ -1,0 +1,10 @@
+n = int(input())
+arr = list(map(int, input().split(' ')))
+weight = list(map(int, input().split(' ')))
+print(len(arr))
+print(len(weight))
+new_weight = sum(weight)
+count = 0
+for i in range(n):
+    count += arr[i] * weight[i]
+print(round(count/new_weight,1))
