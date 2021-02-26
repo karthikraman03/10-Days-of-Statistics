@@ -1,0 +1,23 @@
+from collections import Counter
+
+n=int(input())
+arr=list(map(int,input().split(' ')))
+
+mean=sum(arr)
+
+print(mean/n)
+
+arr.sort()
+middle=n//2
+median=arr[middle-1]+arr[middle]
+print(median/2)
+
+mode=max(arr,key=arr.count)
+print(mode)
+
+
+
+
+
+
+
