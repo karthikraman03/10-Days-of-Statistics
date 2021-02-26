@@ -1,0 +1,13 @@
+import math
+n=int(input())
+
+arr=list(map(int,input().split(' ')))
+
+mean=sum(arr)/n
+l=[]
+for i in range(n):
+    val=int((arr[i]-mean)**2)
+    l.append(val)
+standard_devation=(sum(l)/n)
+val=math.sqrt(standard_devation)
+print(round(val,1))
