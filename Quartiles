@@ -1,0 +1,32 @@
+n=int(input())
+arr=list(map(int,input().split(' ')))
+arr.sort()
+if n%2==0:
+    mid = n // 2
+    Q2=(arr[mid]+arr[mid-1])//2
+    lower_half = arr[0:mid]
+    upper_half = arr[mid:]
+else:
+    mid = n // 2
+    Q2=arr[mid]
+    lower_half=arr[0:mid]
+    upper_half=arr[mid+1:]
+
+
+if len(lower_half)%2==0:
+    mid1=len(lower_half)//2
+    Q1=lower_half[mid1]+lower_half[mid1-1]
+else:
+    mid1 = len(lower_half) // 2
+    Q1=lower_half[mid1]
+
+if len(upper_half)%2==0:
+    mid2=len(upper_half)//2
+    Q3=upper_half[mid2]+upper_half[mid2-1]
+else:
+    mid2=len(upper_half)//2
+    Q3=upper_half[mid2]
+
+print(Q1//2)
+print(Q2)
+print(Q3//2)
