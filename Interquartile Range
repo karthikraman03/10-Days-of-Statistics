@@ -1,0 +1,33 @@
+n=int(input())
+
+x=list(map(int,input().split(' ')))
+f=list(map(int,input().split(' ')))
+
+l=[]
+
+for i in range(n):
+    val=f[i]
+    t = 0
+    while val!=0:
+        l.append(x[i])
+        val-=1
+    t+=1
+
+l.sort()
+length=len(l)
+if length%2==0:
+    mid=length//2
+    lower_half=l[0:mid]
+    upper_half=l[mid+1:]
+    mid1=len(lower_half)//2
+    val1=(lower_half[mid1-1]+lower_half[mid1])/2
+    val2=(upper_half[mid1-1]+upper_half[mid1])/2
+    print(val2-val1)
+else:
+    mid=length//2
+    lower_half=l[0:mid]
+    upper_half=l[mid+1:]
+    mid1=len(lower_half)//2
+    val1=lower_half[mid1]
+    val2=upper_half[mid1]
+    print(val2-val1,end='.0')
